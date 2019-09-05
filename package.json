@@ -1,0 +1,59 @@
+{
+  "name": "story-demo",
+  "version": "1.0.0",
+  "main": "dist/story-ui.umd.min.js",
+  "style": "dist/story-ui.css",
+  "scripts": {
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "build-storybook": "npm run clean && build-storybook -c .storybook && zip -r dist.zip storybook-static/*",
+    "serve": "vue-cli-service serve",
+    "build": "npm run clean && vue-cli-service build --target lib --name story-ui --dest dist src/main.js && npm run component",
+    "component": "webpack --config build/webpack.component.js",
+    "clean": "rm -rf dist && rm -rf storybook-static && rm -f dist.zip && rm -rf lib",
+    "lint": "vue-cli-service lint",
+    "devtools": "vue-devtools",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build"
+  },
+  "dependencies": {
+    "core-js": "^3.1.4",
+    "jquery": "3.3.1",
+    "lodash": "4.17.11",
+    "moment": "2.18.1",
+    "vue": "2.5.17",
+    "vue-full-calendar": "2.5.4"
+  },
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "devDependencies": {
+    "@babel/preset-env": "7.4.3",
+    "@storybook/addon-actions": "5.0.5",
+    "@storybook/addon-centered": "5.0.5",
+    "@storybook/addon-knobs": "5.0.5",
+    "@storybook/addon-notes": "5.0.5",
+    "@storybook/addon-storysource": "5.0.5",
+    "@storybook/addons": "5.0.5",
+    "@storybook/vue": "5.0.5",
+    "@vue/cli-plugin-babel": "3.5.0",
+    "@vue/cli-plugin-eslint": "3.5.0",
+    "@vue/cli-service": "3.5.0",
+    "@vue/devtools": "5.1.0",
+    "@vue/eslint-config-standard": "4.0.0",
+    "babel-plugin-component": "1.1.1",
+    "babel-preset-vue": "2.0.2",
+    "element-ui": "2.4.9",
+    "eslint": "5.8.0",
+    "eslint-plugin-vue": "5.0.0",
+    "less": "3.9.0",
+    "less-loader": "4.1.0",
+    "progress-bar-webpack-plugin": "1.12.1",
+    "url-loader": "1.1.2",
+    "vue-loader": "15.6.4",
+    "vue-template-compiler": "2.5.17",
+    "webpack": "4.29.6",
+    "webpack-bundle-analyzer": "^3.4.1",
+    "webpack-cli": "3.2.3",
+    "webpack-node-externals": "^1.7.2"
+  }
+}
