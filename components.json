@@ -1,0 +1,4 @@
+{
+  "paperMark": "./src/components/paperMark/index.js",
+  "iyxCalendar": "./src/components/calendar/index.js"
+}
